@@ -1,6 +1,18 @@
 # KubeSphere
 
-## yml 安装或者下载下 这两个 yaml 安装
+## 安装方式一
+
+```
+git clone git@github.com:code-lives/KubeSphere.git
+```
+
+```yml
+kubectl apply -f kubesphere-installer.yaml
+
+kubectl apply -f cluster-configuration.yaml
+```
+
+## 安装方式二
 
 ```yml
 kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.3.1/kubesphere-installer.yaml
@@ -18,14 +30,14 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app
 
 http://127.0.0.1:30880
 
-## 账号密码
+### 账号密码
 
 ```
 admin
 P@88w0rd
 ```
 
-# 部署一个简单的 Nginx 应用到 k8s
+### 部署一个简单的 Nginx 应用到 k8s
 
 ```
 kubectl apply -f deployment.yml
@@ -39,7 +51,7 @@ kubectl apply -f deployment.yml
 kubectl port-forward service/app-release -n release 80:80
 ```
 
-#### 请注意
+# 请注意
 
 在生产环境中，直接在 Kubernetes YAML 文件中包含 kubectl port-forward 命令是不推荐的，因为它违反了最佳实践和基于声明式配置的思想。端口转发通常用于开发和调试阶段，在生产环境中应采用适当的负载均衡和服务发现机制。
 
