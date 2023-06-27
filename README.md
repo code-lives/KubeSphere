@@ -42,3 +42,12 @@ kubectl port-forward service/app-release -n release 80:80
 #### 请注意
 
 在生产环境中，直接在 Kubernetes YAML 文件中包含 kubectl port-forward 命令是不推荐的，因为它违反了最佳实践和基于声明式配置的思想。端口转发通常用于开发和调试阶段，在生产环境中应采用适当的负载均衡和服务发现机制。
+
+# 卸载 KubeSphere
+
+这里查看最新卸载方式
+https://github.com/kubesphere/ks-installer/blob/master/scripts/kubesphere-delete.sh
+
+```
+./uninstall.sh
+```
